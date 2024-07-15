@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -8,10 +8,26 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'password_generator_application';
 
   copied:boolean = false;
-  charLength:number = 8;
+  charLength:number = 0;
+  placeholderText:string = 'sf@siA92*aF';
+
+  // password letters, symbols and numbers
+  lowercaseLetters:string = 'abcdefghijklmonpqrstuvwxyz';
+  uppercaseLetters:string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  numbers:string = '0123456789';
+  symbols:string = '!@#$%^&*()_+[]{}|;:,.<>?'; 
+
+
+  ngOnInit(): void {
+    console.log()
+  }
+
+  generateRandom () {
+
+  }
   
 }
