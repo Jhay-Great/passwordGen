@@ -14,19 +14,63 @@
 <section class="password-controls">
   <form action="">
     <!-- character length -->
-    <div class="character-length">
-      <div>
+    <section class="character-length">
+      <div class="char_len_display">
         <p>Character Length</p>
         <p>{{charLength}}</p>
       </div>
       <input type="range" name="character_length" min="0" max="20" id="">
-    </div>
+    </section>
 
     <!-- require criteria -->
+     <section class="criteria">
+      <div class="uppercase-letters">
+        <input type="checkbox" name="uppercase" id="criteria-uppercase" />
+        <label for="criteria-uppercase">
+          Include Uppercase letters
+        </label>
+      </div>
+      <div class="lowercase-letters">
+        <input type="checkbox" name="lowercase" id="criteria-lowercase">
+        <label for="criteria-lowercase">
+          Include Lowercase letters
+        </label>
+      </div>
+      <div class="numbers">
+        <input type="checkbox" name="numbers" id="criteria-numbers">
+        <label for="criteria-numbers">
+          Include Numbers
+        </label>
+      </div>
+      <div class="symbols">
+        <input type="checkbox" name="symbols" id="criteria-symbols">
+        <label for="criteria-symbols">
+          Include Symbols
+        </label>
+      </div>
+      
+     </section>
 
     <!-- password strength -->
+     <section class="password-strength">
+      <p>strength</p>
+      <div>
+        <p>medium</p>
+        <div class="strength_gauge">
+          <!-- loop through this about 4 times -->
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+     </section>
 
     <!-- generate button -->
+     <button>
+      Generate 
+      <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg>
+     </button>
 
   </form>
 </section>
