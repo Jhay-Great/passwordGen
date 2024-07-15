@@ -10,4 +10,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'password_generator_application';
+
+  copied:boolean = false;
+  charLength:number = 8;
+  
 }

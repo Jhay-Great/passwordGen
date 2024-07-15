@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+
+// page reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// colors
+$bg-main-color: #24232C;
+$bg-secondary-color: #A4FFAF;
+$bg-transparent: transparent;
+
+// flex styles
+
+
+// body
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 100dvh;
+}
+
+// app-component
+app-root {
+    width: 90%;
+    height: 540px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+@media screen and (min-width: 780px) {
+    app-root {
+        width: 540px;
+    }
+}
