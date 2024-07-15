@@ -23,11 +23,16 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log()
-    console.log(this.evaluateCriteria(true, true, true, true));
+    // console.log(this.evaluateCriteria(true, true, true, true));
+    // console.log(this.generateRandomPassword(8, this.evaluateCriteria(true, true, true, true)))
   }
 
-  evaluateCriteria (lowercase:boolean, uppercase:boolean, numbers:boolean, symbols:boolean): string {
+  evaluateCriteria (
+    lowercase:boolean=false, 
+    uppercase:boolean=false, 
+    numbers:boolean=false, 
+    symbols:boolean=false
+  ): string {
     let passwordCriteria:string = ''
 
     if (lowercase) passwordCriteria += this.lowercaseLetters;
@@ -45,10 +50,13 @@ export class AppComponent implements OnInit {
   }
 
   generateRandomPassword (length:number, criteria:string) {
+    console.log(length)
     let password = '';
     for (let i = 0; i < length; i++) {
-      password = criteria[this.random(criteria.length)];
+      password += criteria[this.random(criteria.length)];
     }
+
+    return password;
   }
   
 }
