@@ -118,5 +118,12 @@ export class AppComponent implements OnInit {
     return;
 
   }
+
+
+  async copyToClipboard (text:string) {
+    await navigator.clipboard.writeText(text);
+    // console.log(string); 
+  }
+  
   
 }
