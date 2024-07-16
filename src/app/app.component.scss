@@ -174,9 +174,38 @@ h1 {
             width: 20px;
             height: 20px;
             appearance: none;
-            border: 2px solid #a4ffaf;
+            border: 2px solid $bg-secondary-color;
+
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             
             cursor: pointer;
+
+            &::after {
+                content: '';
+                background: url(../assets/icon-check.svg) center no-repeat;
+                background-size: 11px;
+                position: absolute;
+                top: 0;
+                width: inherit;
+                height: inherit;
+                aspect-ratio: 1;
+                display: none;
+
+            }
+
+            &:checked {
+                background: $bg-secondary-color;
+                border: none;
+
+                &::after {
+                    display: block;
+                }
+            }
 
             // &::-ms-check,
             // &:checked {
