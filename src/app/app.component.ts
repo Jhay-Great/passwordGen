@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
     const criteria = this.evaluateCriteria(lowercase, uppercase, numbers, symbols);
     
     
-    const password = this.generateRandomPassword(criteria);
+    const password = this.generateRandomPassword(criteria, this.charLength);
     
     this.generatedPassword = password;
     const strength = this.evaluateStrength(lowercase, uppercase, numbers, symbols);
@@ -126,7 +126,7 @@ export class AppComponent implements OnInit {
       border: 'none',
     }
     if (this.passwordStrength === 'weak') {
-      console.log('called')
+      // console.log('called')
       // return {'border-color': 'red', 'background' : 'bg-weak'}
       return {
         'background': '#FB7C58',
@@ -148,6 +148,11 @@ export class AppComponent implements OnInit {
   async copyToClipboard (text:string) {
     await navigator.clipboard.writeText(text);
     // console.log(string); 
+  }
+
+  // getting the value or length
+  getPasswordLength (input:any) {
+    return this.charLength = input.value;
   }
   
   
