@@ -60,10 +60,13 @@
         <p>medium</p>
         <div class="strength_gauge">
           <!-- loop through this about 4 times -->
+           @for (gauge of [0, 1, 2, 3]; track $index) {
+             <div [ngStyle]="handleStrengthGauge()"></div>
+
+           }
+          <!-- <div></div>
           <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div></div> -->
         </div>
       </div>
      </section>

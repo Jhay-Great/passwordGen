@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-// import { Clipboard } from '@angular/cdk/clipboard';
-// import { ClipboardModule } from '@angular/cdk/clipboard';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule],
+  imports: [RouterOutlet, CommonModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   placeholderText:string = 'sf@siA92*aF';
   generatedPassword!:string;
   passwordStrength!:string;
+  gaugeBox:number = 4;
 
   formState = {
     lowercase: false,
@@ -117,6 +118,30 @@ export class AppComponent implements OnInit {
 
     return;
 
+  }
+
+  handleStrengthGauge () {
+    if (this.passwordStrength === 'too weak') return {
+      background: '#F64A4A',
+      border: 'none',
+    }
+    if (this.passwordStrength === 'weak') {
+      console.log('called')
+      // return {'border-color': 'red', 'background' : 'bg-weak'}
+      return {
+        'background': '#FB7C58',
+        'border': 'none',
+      }
+    }
+    if (this.passwordStrength === 'medium') return {
+      background: '#F8CD65',
+      border: 'none',
+    }
+    if (this.passwordStrength === 'strong') return {
+      background: '#A4FFAF',
+      border: 'none',
+    }
+    return;
   }
 
 

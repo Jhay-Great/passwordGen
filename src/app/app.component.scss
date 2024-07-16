@@ -187,7 +187,8 @@ h1 {
             div {
                 width: 8px;
                 height: 20px;
-                background: $bg-medium;
+                background: $bg-transparent;
+                border: 2px solid $bg-smoke-white;
             }
         }
     }
