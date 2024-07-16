@@ -25,7 +25,7 @@ h1 {
     background-color: $bg-main-color;
 
     input {
-        width: 70%;
+        width: 85%;
         height: 100%;
         font-size: 2rem;
 
@@ -42,6 +42,18 @@ h1 {
         }
     }
     .copy-container {
+        flex: 1 0 0%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $bg-main-color;
+
+        p {
+            text-transform: uppercase;
+            font-size: small;
+            color: $bg-secondary-color;
+        }
 
         button {
             display: block;
@@ -80,6 +92,7 @@ h1 {
 
             & > :last-child {
                 color: $bg-secondary-color;
+                font-size: 1.5rem;
             }
         }
 

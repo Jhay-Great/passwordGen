@@ -148,6 +148,8 @@ export class AppComponent implements OnInit {
 
   async copyToClipboard (text:string) {
     await navigator.clipboard.writeText(text);
+    this.copied = true;
+    
     // console.log(string); 
   }
 
