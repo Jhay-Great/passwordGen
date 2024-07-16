@@ -152,7 +152,7 @@ export class AppComponent implements OnInit {
     
     // console.log(string); 
   }
-
+  
   // getting the value or length
   getPasswordLength (input:any) {
     return this.charLength = input.value;

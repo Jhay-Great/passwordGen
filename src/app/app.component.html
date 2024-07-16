@@ -59,11 +59,40 @@
       <div>
         <p>{{passwordStrength}}</p>
         <div class="strength_gauge">
+          @if (!passwordStrength) {
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          }
+          @if (passwordStrength === 'too weak') {
+            <div [ngStyle]="handleStrengthGauge()"></div> 
+            <div></div>
+            <div></div>
+            <div></div>
+          }
+          @if (passwordStrength === 'weak') {
+            <div [ngStyle]="handleStrengthGauge()"></div> 
+            <div [ngStyle]="handleStrengthGauge()"></div> 
+            <div></div>
+            <div></div>
+          }
+          @if (passwordStrength === 'medium') {
+            <div [ngStyle]="handleStrengthGauge()"></div> 
+            <div [ngStyle]="handleStrengthGauge()"></div> 
+            <div [ngStyle]="handleStrengthGauge()"></div> 
+            <div></div>
+          }
+          @if (passwordStrength === 'strong') {
+            <div [ngStyle]="handleStrengthGauge()"></div> 
+            <div [ngStyle]="handleStrengthGauge()"></div> 
+            <div [ngStyle]="handleStrengthGauge()"></div> 
+            <div [ngStyle]="handleStrengthGauge()"></div> 
+          }
           <!-- loop through this about 4 times -->
-           @for (gauge of [0, 1, 2, 3]; track $index) {
+           <!-- @for (gauge of [0, 1, 2, 3]; track $index) {
              <div [ngStyle]="handleStrengthGauge()"></div>
-
-           }
+           } -->
           <!-- <div></div>
           <div></div>
           <div></div> -->

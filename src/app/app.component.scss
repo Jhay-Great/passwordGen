@@ -112,12 +112,13 @@ h1 {
         input:active {
             // background: $bg-secondary-color;
         }
+        // webkit browsers
         input::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%; 
+            width: 30px;
+            height: 30px;
+            border-radius: 100%; 
             background: $bg-smoke-white;
             cursor: pointer;
         }
@@ -145,7 +146,14 @@ h1 {
         input:focus::-webkit-slider-runnable-track::before {
             width: calc(var(--value) * 100%);
         }
+
+        // moz browsers for firefox
+        &::-moz-range-progress {
+            /* ... */
+            background: $bg-secondary-color;
+        }
     }
+
 }
 
 .criteria {
@@ -165,9 +173,18 @@ h1 {
         input {
             width: 20px;
             height: 20px;
-            accent-color: $bg-secondary-color;
+            appearance: none;
+            border: 2px solid #a4ffaf;
             
             cursor: pointer;
+
+            // &::-ms-check,
+            // &:checked {
+            //     accent-color: $bg-secondary-color;
+            //     appearance: auto;
+
+            // }
+            
         }
 
         label {
