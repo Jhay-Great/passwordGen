@@ -152,10 +152,18 @@ export class AppComponent implements OnInit {
     
     // console.log(string); 
   }
-  
+
   // getting the value or length
   getPasswordLength (input:any) {
     return this.charLength = input.value;
+  }
+
+  sliderProgress () {
+    const max = 20;
+    const min = 0;
+
+    
+    
   }
   
   
