@@ -106,15 +106,16 @@ export class AppComponent implements OnInit {
     // const { uppercase, lowercase, numbers, symbols } = this.formState
     let characterCount = 0;
 
-    if (this.generatedPassword.length < 8) return `Too weak`;
+    if (this.generatedPassword.length < 8 || characterCount) return `too weak`;
     if (uppercase) characterCount++;
     if (lowercase) characterCount++;
     if (numbers) characterCount++;
     if (symbols) characterCount++;
 
-    if (this.generatedPassword.length >= 8 && characterCount === 1) return 'weak';
-    if (this.generatedPassword.length >= 8 && characterCount >= 2) return 'medium';
+    // critically look at this
     if (this.generatedPassword.length >= 12 && characterCount >= 3) return 'strong';
+    if (this.generatedPassword.length >= 8 && characterCount >= 2) return 'medium';
+    if (this.generatedPassword.length >= 8 && characterCount === 1) return 'weak';
 
     return;
 

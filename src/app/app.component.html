@@ -58,7 +58,7 @@
      <section class="password-strength">
       <p>strength</p>
       <div>
-        <p>medium</p>
+        <p>{{passwordStrength}}</p>
         <div class="strength_gauge">
           <!-- loop through this about 4 times -->
            @for (gauge of [0, 1, 2, 3]; track $index) {

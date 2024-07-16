@@ -47,6 +47,15 @@ h1 {
             display: block;
             width: fit-content;
             height: fit-content;
+            background: $bg-transparent;
+
+            &:hover {
+                border: none;
+
+                svg path {
+                    fill: $bg-smoke-white;
+                }
+            }
         }
     }
 }
@@ -211,4 +220,16 @@ button {
     color: $bg-main-color;
     font-family: $general-font;
     background: $bg-secondary-color;
+
+    &:hover {
+        background: $bg-main-color;
+        border: 2px solid $bg-secondary-color;
+        color: $bg-secondary-color;
+        // transition: all 600ms ease-in;
+        
+        svg path {
+            fill: $bg-secondary-color;
+            // transition: all 600ms ease-in;
+        }
+    }
 }
