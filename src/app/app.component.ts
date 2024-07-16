@@ -159,9 +159,10 @@ export class AppComponent implements OnInit {
   }
 
   sliderProgress () {
-    const max = 20;
-    const min = 0;
-
+    
+    return {
+      'background': `linear-gradient(90deg, #a4ffaf ${this.charLength * 5}%, #18171F 0%)`,
+    }
     
     
   }
