@@ -12,7 +12,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
-  title = 'password_generator_application';
 
   copied:boolean = false;
   charLength:number = 0;
@@ -147,10 +146,20 @@ export class AppComponent implements OnInit {
 
 
   async copyToClipboard (text:string) {
+    if (!this.generatedPassword) return;
+    
     await navigator.clipboard.writeText(text);
     this.copied = true;
+    this.timeOut();
     
     // console.log(string); 
+  }
+
+  timeOut () {
+    setTimeout(() => {
+      this.copied = false;
+      console.log(this.copied)
+    }, 3000)
   }
 
   // getting the value or length

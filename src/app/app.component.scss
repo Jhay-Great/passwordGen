@@ -82,7 +82,7 @@ h1 {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 10px;
+        gap: 30px;
         // padding: 1rem;
 
         .char_len_display {
@@ -136,7 +136,7 @@ h1 {
             top: 0;
             z-index: 1;
             /* Use the width as a percentage of the input's value */
-            width: calc(var(--value) * 100%);
+            // width: calc(var(--value) * 100%);
         }
         /* Ensure the pseudo-element for progress is above the track */
         input::-webkit-slider-runnable-track {
@@ -144,9 +144,9 @@ h1 {
         }
   
         /* Apply this style when the slider value changes */
-        input:focus::-webkit-slider-runnable-track::before {
-            width: calc(var(--value) * 100%);
-        }
+        // input:focus::-webkit-slider-runnable-track::before {
+        //     width: calc(var(--value) * 100%);
+        // }
 
         // moz browsers for firefox
         &::-moz-range-progress {
